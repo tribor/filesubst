@@ -1,0 +1,8 @@
+if test -n "$*"; then
+  for i in $*; do
+    cat $i | envsubst > /tmp/tmpfile
+    mv /tmp/tmpfile $i
+  done
+else
+ cat | envsubst
+fi
